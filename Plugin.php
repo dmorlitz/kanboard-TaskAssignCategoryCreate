@@ -30,7 +30,7 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return '';
+        return 'https://github.com/dmorlitz/kanboard-TaskAssignCategoryCreate';
     }
 
     public function getCompatibleVersion()
