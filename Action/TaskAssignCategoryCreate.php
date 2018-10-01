@@ -21,7 +21,7 @@ class TaskAssignCategoryCreate extends Base
      */
     public function getDescription()
     {
-        return t('Automatically assign a category when a task is created');
+        return t('Automatically assign a category and color when a task is created');
     }
 
     /**
@@ -47,6 +47,7 @@ class TaskAssignCategoryCreate extends Base
     {
         return array(
             'category_id' => t('Category'),
+            'color_id' => t('Color'),
         );
     }
 
@@ -63,6 +64,7 @@ class TaskAssignCategoryCreate extends Base
             'task' => array(
                 'column_id',
                 'project_id',
+                'color_id',
             ),
         );
     }
@@ -79,7 +81,7 @@ class TaskAssignCategoryCreate extends Base
         $values = array(
             'id' => $data['task_id'],
             'category_id' => $this->getParam('category_id'),
-            //'color_id' => $this->getParam('color_id'),
+            'color_id' => $this->getParam('color_id'),
         );
 
         return $this->taskModificationModel->update($values, false);
